@@ -4,44 +4,42 @@ import AppBar from './AppBar';
 
 const HomeScreen = ({ navigation }) => {
     return (
-        <View style={{ flex: 1 }}>
+        <View style={styles.container}>
             <AppBar title="Inicio" navigation={navigation} />
             <ScrollView contentContainerStyle={styles.scrollViewContainer}>
-                <View style={styles.container}>
-                    <Text style={styles.text}>
+                <View>
+                    <Text style={styles.headerText}>
                         Bienvenido a la app del Tren Maya
                     </Text>
                     <Image
                         source={require('./assets/Inicio.jpg')}
                         style={styles.image}
                     />
-                    <Text style={styles.text}>
-                        Introducción:
-                    </Text>
-                    <Text>
-                        El Tren Maya es un proyecto de infraestructura ferroviaria
-                        que busca conectar los principales destinos turísticos del
-                        sureste de México. La ruta del tren abarca los estados de
-                        Chiapas, Tabasco, Campeche, Yucatán y Quintana Roo.
-                    </Text>
-                    <Text style={styles.text}>
-                        Objetivo:
-                    </Text>
-                    <Text>
-                        El proyecto contempla la construcción de 1,525 kilómetros
-                        de vías férreas, con 15 estaciones y una inversión de más
-                        de 6,000 millones de dólares. El tren tendrá una velocidad
-                        máxima de 160 km/h y se espera que transporte a más de 8
-                        millones de pasajeros al año.
-                    </Text>
+                    <View style={styles.section}>
+                        <Text style={styles.sectionHeader}>
+                            Introducción
+                        </Text>
+                        <Text style={styles.sectionText}>
+                            El Tren Maya es un proyecto de infraestructura ferroviaria que busca conectar los principales destinos turísticos del sureste de México. La ruta del tren abarca los estados de Chiapas, Tabasco, Campeche, Yucatán y Quintana Roo.
+                        </Text>
+                    </View>
+                    <View style={styles.section}>
+                        <Text style={styles.sectionHeader}>
+                            Objetivo
+                        </Text>
+                        <Text style={styles.sectionText}>
+                            El proyecto contempla la construcción de 1,525 kilómetros de vías férreas, con 15 estaciones y una inversión de más de 6,000 millones de dólares. El tren tendrá una velocidad máxima de 160 km/h y se espera que transporte a más de 8 millones de pasajeros al año.
+                        </Text>
+                    </View>
                     <Image
                         source={require('./assets/Segunda.jpg')}
                         style={styles.image}
                     />
-
-                    <Text>
-                        El Tren Maya es un proyecto ferroviario que conectará los estados del sureste mexicano: Chiapas, Tabasco, Campeche, Yucatán y Quintana Roo. Esta iniciativa tiene como objetivo impulsar el turismo en la región, preservar el patrimonio cultural y promover el desarrollo sostenible.
-                    </Text>
+                    <View style={styles.section}>
+                        <Text style={styles.sectionText}>
+                            El Tren Maya es un proyecto ferroviario que conectará los estados del sureste mexicano: Chiapas, Tabasco, Campeche, Yucatán y Quintana Roo. Esta iniciativa tiene como objetivo impulsar el turismo en la región, preservar el patrimonio cultural y promover el desarrollo sostenible.
+                        </Text>
+                    </View>
                     <Image
                         source={require('./assets/Tercera.jpg')}
                         style={styles.image}
@@ -54,25 +52,39 @@ const HomeScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingHorizontal: 20,
-        paddingBottom: 40,
+        flex: 1,
+        backgroundColor: '#F5F5F5',
     },
     scrollViewContainer: {
         flexGrow: 1,
     },
-    text: {
+    headerText: {
         fontSize: 20,
         fontWeight: 'bold',
-        marginBottom: 30,
+        textAlign: 'center',
+        marginTop: 20,
+        marginBottom: 20,
+    },
+    section: {
+        backgroundColor: 'white',
+        borderRadius: 10,
+        padding: 20,
+        marginBottom: 20,
+    },
+    sectionHeader: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 10,
+    },
+    sectionText: {
+        fontSize: 16,
+        lineHeight: 24,
     },
     image: {
-        width: 200,
-        height: 150,
+        width: '100%',
+        height: 200,
         resizeMode: 'cover',
         marginBottom: 20,
-
     },
 });
 
